@@ -27,6 +27,17 @@ jobs:
         with: 
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: Deploy Resource Group rg-githubactions
+        uses: Azure/arm-deploy@v2
+        with:
+          scope: subscription
+          subscriptionId: 020b5f2c-7625-4971-9b0f-7ec8e3d0cfa1
+          region: Australia East
+          template: ./arm-templates/resourcegroup.json
+          deploymentName: rg-githubactions
+      
+      
+
 
       
 
